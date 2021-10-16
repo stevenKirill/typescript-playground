@@ -25,7 +25,7 @@ function merge<T,U>(objA: T,objB: U) {
 
 const merged = merge({ name: 'Kirill' },{ age: 19 });
 merged.age = 20
-console.log(merged,'=> merged')
+//console.log(merged,'=> merged')
 
 // constraints 
 
@@ -50,8 +50,8 @@ function counterDescriber<T extends Lengthy>(el: T): [T,string] {
     return [el, disc]
 }
 
-console.log(counterDescriber('Hi ppl'));
-console.log(counterDescriber(['2','3']));
+//console.log(counterDescriber('Hi ppl'));
+//console.log(counterDescriber(['2','3']));
 
 // keyof constraint
 
@@ -59,7 +59,7 @@ function extract<T extends object,U extends keyof T>(obj: T, key: U) {
     return obj[key]
 };
 
-console.log(extract({ name: 'Kia' },'name'))
+//console.log(extract({ name: 'Kia' },'name'))
 //console.log(extract({ name: 'Kia' },'price'))
 
 // generic classes
@@ -88,7 +88,7 @@ const textStorage = new DataStorage<string>();
 textStorage.addItem('str1');
 textStorage.addItem('str2');
 textStorage.removeItem('str1');
-console.log(textStorage.getItems());
+//console.log(textStorage.getItems());
 
 // concrete type
 const numbersStorage = new DataStorage<number>();
@@ -99,10 +99,10 @@ const objectStorage = new DataStorage<object>();
 objectStorage.addItem({ name: 'Kirill' });
 objectStorage.addItem({ name: 'Anna' });
 objectStorage.removeItem({ name: 'Kirill'});
-console.log(objectStorage.getItems());
+//console.log(objectStorage.getItems());
 const kirObject = objectStorage.getItems()[0];
 objectStorage.removeItem(kirObject);
-console.log(objectStorage.getItems());
+//console.log(objectStorage.getItems());
 
 // generic utility type (built in types)
 
