@@ -1,11 +1,9 @@
 export const deepEqualCompare = <Arg> (
-  a: Arg,
-  b: Arg
+  a: Arg extends any[] ? "Dont' pass an array" : Arg,
+  b: Arg extends any[] ? "Dont' pass an array" : Arg
 ): boolean => {
-  if (Array.isArray(a) || Array.isArray(b)) {
-    throw new Error(
-      'Yoy cannot compare two arrays using deepEqual'
-    )
-  }
   return a === b
 }
+
+deepEqualCompare('a', 'b')
+deepEqualCompare([], [])
